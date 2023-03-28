@@ -75,19 +75,19 @@ app.post('/api/generate', (req, res) => {
           console.log(imge);
           var newg = response.taglineResult.choices[0].text;
           console.log(newg);
-          var desc = JSON.stringify(newg)
+          // var desc = JSON.stringify(newg)
           // var desc = JSON.parse(newg);
           // try
         // connection.query('INSERT INTO fb_table(link,desc) VALUES('${imge,newg}')');
-        const query = `INSERT INTO fb_table (link,desc) VALUES ('${imge}','${desc}')`;
+        const query = `INSERT INTO fb_table (link) VALUES ('${imge}')`;
        
         connection.query(query, (error, results, ) => {
           if (error) throw error;
           console.log('Data inserted successfully');
           connection.end();
         });
-        //   const query = `INSERT INTO fb_table (desc) VALUES ('${newg}')`;
-        // connection.query(query, (error, results, ) => {
+        //   const query1 = `INSERT INTO fb_table (desc) VALUES ('${newg}')`;
+        // connection.query1(query, (error, results, ) => {
         //   if (error) throw error;
         //   console.log('Data inserted successfully');
         //   connection.end();
